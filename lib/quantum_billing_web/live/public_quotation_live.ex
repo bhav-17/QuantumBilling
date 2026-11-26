@@ -38,6 +38,7 @@ defmodule QuantumBillingWeb.PublicQuotationLive do
         {:ok,
          socket
          |> assign(:page_title, "Quotation #{quotation.number}")
+         |> assign(:noindex, true)
          |> assign(:business, business)
          |> assign(:token, token)
          |> assign(:answer_error, nil)

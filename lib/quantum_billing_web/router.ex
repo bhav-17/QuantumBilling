@@ -151,7 +151,7 @@ defmodule QuantumBillingWeb.Router do
     get "/invoices/:id/pdf/download", InvoicePdfController, :download
     get "/quotations/:id/pdf", QuotationPdfController, :show
     get "/quotations/:id/download", QuotationPdfController, :download
-    get "/e-way-bills/export", EWayBillController, :export
+    get "/e-way-bills/export", EWayBillExportController, :export
     get "/e-way-bills/:id/print", EWayBillPdfController, :show
     get "/e-way-bills/:id/print/download", EWayBillPdfController, :download
     get "/invoices/:id/e-invoice.xml", EInvoiceController, :show

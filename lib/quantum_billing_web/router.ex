@@ -151,7 +151,7 @@ defmodule QuantumBillingWeb.Router do
     get "/invoices/:id/pdf/download", InvoicePdfController, :download
     get "/quotations/:id/pdf", QuotationPdfController, :show
     get "/quotations/:id/download", QuotationPdfController, :download
-    get "/e-way-bills/export", EWayBillController, :export
+    get "/e-way-bills/export", EWayBillExportController, :export
     get "/e-way-bills/:id/print", EWayBillPdfController, :show
     get "/e-way-bills/:id/print/download", EWayBillPdfController, :download
     get "/invoices/:id/e-invoice.xml", EInvoiceController, :show
@@ -271,6 +271,7 @@ defmodule QuantumBillingWeb.Router do
     get "/credit-notes/:id", CreditNoteController, :show
     get "/clients", ClientController, :index
     post "/clients", ClientController, :create
+    get "/clients/:id", ClientController, :show
     get "/e-way-bills", EWayBillController, :index
     get "/e-way-bills/:id", EWayBillController, :show
 
@@ -317,7 +318,7 @@ defmodule QuantumBillingWeb.Router do
     end
 
     post "/users/update-password", UserSessionController, :update_password
-    # A controller, not a LiveView: only an HTTP response can write the session.
+    # A controller, not an event: only an HTTP response can write the session.
     post "/businesses/:id/switch", BusinessController, :switch
   end
 
